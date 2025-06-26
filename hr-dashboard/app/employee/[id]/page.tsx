@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 
 export default function EmployeeDetails() {
   const { id } = useParams();
@@ -22,6 +23,15 @@ export default function EmployeeDetails() {
   return (
     <main className="p-6">
       <h1 className="text-2xl font-bold mb-4">Employee Profile</h1>
+
+      <Image
+        src="/image.png"
+        alt="Employee related image"
+        width={600}
+        height={300}
+        className="mb-4 rounded-lg"
+      />
+
       <div className="bg-white border rounded-lg p-6 shadow-md max-w-xl">
         <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
         <p><strong>Email:</strong> {user.email}</p>
